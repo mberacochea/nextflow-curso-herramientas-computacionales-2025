@@ -1,0 +1,26 @@
+{
+    "name": "nextflow-curso-herramientas-computacionales-2025",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "workspaceFolder": "/workspaces/nextflow-curso-herramientas-computacionales-2025",
+    "remoteUser": "root",
+    "remoteEnv": {
+        "NXF_HOME": "/workspaces/.nextflow",
+        "NXF_EDGE": "0",
+        "NXF_VER": "25.04.3",
+        "HOST_PROJECT_PATH": "/workspaces/nextflow-curso-herramientas-computacionales-2025",
+        "SHELL": "/bin/bash",
+        "MAMBA_ROOT_PREFIX": "/opt/micromamba"
+    },
+    "onCreateCommand": "bash .devcontainer/setup.sh",
+    "customizations": {
+        "vscode": {
+            "extensions": ["nf-core.nf-core-extensionpack"],
+            "settings": {
+                "python.defaultInterpreterPath": "/opt/conda/bin/python"
+            },
+            "terminal.integrated.defaultProfile.linux": "bash"
+        }
+    }
+}
