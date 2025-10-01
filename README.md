@@ -45,7 +45,7 @@ Key concepts: Meta map, CSV input, channel operators, parallel sample processing
 
 ## Workflow
 
-The training uses a bioinformatics workflow for read alignment and quality control:
+The training uses a bioinformatics workflow for read alignment:
 
 ```bash
 bwa index reference.fasta
@@ -57,8 +57,6 @@ samtools view -bS aligned.sam > aligned.bam
 samtools sort aligned.bam -o aligned.sorted.bam
 
 samtools index aligned.sorted.bam
-
-qualimap bamqc -bam aligned.sorted.bam -outdir qualimap_results
 ```
 
 ## Getting Started
@@ -122,7 +120,6 @@ nextflow run main.nf \
 - Conda/Micromamba
 - BWA (alignment)
 - Samtools (BAM processing)
-- Qualimap (quality control)
 
 ## Prerequisites
 
@@ -141,3 +138,7 @@ The course has 5 progressive lessons (numbered 1, 2, 3, 4, 6):
 - Lessons 1 and 4 include hands-on exercises with solutions
 
 Progress through the lessons sequentially to build a complete understanding of Nextflow pipeline development.
+
+---
+
+This training material was developed with assistance from Claude Code.

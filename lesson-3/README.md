@@ -12,7 +12,6 @@ bwa mem reference.fasta reads_R1.fastq.gz reads_R2.fastq.gz > aligned.sam
 samtools view -bS aligned.sam > aligned.bam
 samtools sort aligned.bam -o aligned.sorted.bam
 samtools index aligned.sorted.bam
-qualimap bamqc -bam aligned.sorted.bam -outdir qualimap_results
 ```
 
 ## Key Changes from Lesson 2
@@ -35,7 +34,6 @@ The pipeline now organizes results into subdirectories:
 - `${params.outdir}/bwa_index/` - Reference genome index files
 - `${params.outdir}/alignment/` - SAM alignment files
 - `${params.outdir}/bam/` - BAM files (converted, sorted, and indexed)
-- `${params.outdir}/qualimap/` - Quality control reports
 
 ### Pattern Matching
 

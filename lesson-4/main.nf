@@ -1,11 +1,4 @@
 /*
- * Pipeline parameters
- */
-params.reference = null
-params.reads = null
-params.outdir = "results"
-
-/*
  * Import modules
  */
 include { BWA_INDEX      } from './modules/bwa/index'
@@ -13,7 +6,6 @@ include { BWA_MEM        } from './modules/bwa/mem'
 include { SAMTOOLS_VIEW  } from './modules/samtools/view'
 include { SAMTOOLS_SORT  } from './modules/samtools/sort'
 include { SAMTOOLS_INDEX } from './modules/samtools/index'
-include { QUALIMAP_BAMQC } from './modules/qualimap/bamqc'
 
 /*
  * Main workflow
@@ -28,8 +20,12 @@ workflow {
     }
 
     // Create input channels
-    reference_ch = Channel.fromPath(params.reference)
+    reference_ch = Channel.fromPath(params.reference, checkIfExists: true)
+
     reads_ch = Channel.fromFilePairs(params.reads, checkIfExists: true)
+
+    // Sample id?
+    // reads_ch.view()
 
     // Step 1: Index reference genome
     BWA_INDEX(reference_ch)
@@ -48,7 +44,4 @@ workflow {
 
     // Step 5: Index BAM file
     SAMTOOLS_INDEX(SAMTOOLS_SORT.out.sorted_bam)
-
-    // Step 6: Run quality control
-    QUALIMAP_BAMQC(SAMTOOLS_INDEX.out.indexed_bam)
 }

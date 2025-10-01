@@ -7,5 +7,3 @@ samtools view -bS aligned.sam > aligned.bam
 samtools sort aligned.bam -o aligned.sorted.bam
 
 samtools index aligned.sorted.bam
-
-qualimap bamqc -bam aligned.sorted.bam -outdir qualimap_results

@@ -12,7 +12,6 @@ bwa mem reference.fasta reads_R1.fastq.gz reads_R2.fastq.gz > aligned.sam
 samtools view -bS aligned.sam > aligned.bam
 samtools sort aligned.bam -o aligned.sorted.bam
 samtools index aligned.sorted.bam
-qualimap bamqc -bam aligned.sorted.bam -outdir qualimap_results
 ```
 
 ## Key Changes from Lesson 1
@@ -37,9 +36,7 @@ The `nextflow.config` includes profiles for different execution modes:
 profiles {
     docker {
         docker.enabled = true
-        docker.runOptions = '-u $(id -u):$(id -g)'
     }
-
     conda {
         conda.enabled = true
     }
@@ -60,8 +57,7 @@ With Docker:
 nextflow run main.nf \
   -profile docker \
   --reference /workspaces/nextflow-curso-herramientas-computacionales-2025/assets/genome.fasta \
-  --reads '/workspaces/nextflow-curso-herramientas-computacionales-2025/assets/test_{1,2}.fastq.gz' \
-  --outdir results
+  --reads '/workspaces/nextflow-curso-herramientas-computacionales-2025/assets/test_{1,2}.fastq.gz'
 ```
 
 With Conda:
@@ -69,6 +65,5 @@ With Conda:
 nextflow run main.nf \
   -profile conda \
   --reference /workspaces/nextflow-curso-herramientas-computacionales-2025/assets/genome.fasta \
-  --reads '/workspaces/nextflow-curso-herramientas-computacionales-2025/assets/test_{1,2}.fastq.gz' \
-  --outdir results
+  --reads '/workspaces/nextflow-curso-herramientas-computacionales-2025/assets/test_{1,2}.fastq.gz'
 ```

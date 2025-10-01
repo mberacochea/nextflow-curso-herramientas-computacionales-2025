@@ -5,6 +5,7 @@ process BWA_MEM {
 
     input:
     tuple path(reference), path(index)
+    // What is sample is?
     tuple val(sample_id), path(reads)
 
     output:

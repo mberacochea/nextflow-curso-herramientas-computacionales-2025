@@ -11,6 +11,7 @@ process SAMTOOLS_SORT {
 
     script:
     """
-    samtools sort -@ ${task.cpus} ${bam} -o aligned.sorted.bam
+    samtools sort -@ ${task.cpus} ${bam} \\
+    -o aligned.sorted.bam
     """
 }

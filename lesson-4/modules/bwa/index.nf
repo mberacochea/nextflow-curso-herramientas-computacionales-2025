@@ -8,10 +8,11 @@ process BWA_INDEX {
     path reference
 
     output:
+    // What is a tuple?
     tuple path(reference), path("${reference}.*"), emit: index
 
     script:
     """
-    bwa index -t ${task.cpus} ${reference}
+    bwa index ${reference}
     """
 }

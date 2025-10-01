@@ -12,7 +12,6 @@ bwa mem reference.fasta reads_R1.fastq.gz reads_R2.fastq.gz > aligned.sam
 samtools view -bS aligned.sam > aligned.bam
 samtools sort aligned.bam -o aligned.sorted.bam
 samtools index aligned.sorted.bam
-qualimap bamqc -bam aligned.sorted.bam -outdir qualimap_results
 ```
 
 ## Key Changes from Lesson 3
@@ -57,7 +56,6 @@ Complete the `nextflow.config` file by adding a `process` configuration block th
    - BWA_INDEX: 4 CPUs, 8 GB memory
    - BWA_MEM: 8 CPUs, 16 GB memory
    - SAMTOOLS_SORT: 4 CPUs, 8 GB memory
-   - QUALIMAP_BAMQC: 4 CPUs, 8 GB memory
 
 The modules already reference `${task.cpus}` and will use these configured values automatically.
 

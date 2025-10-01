@@ -1,0 +1,21 @@
+# Nextflow
+.nextflow/
+.nextflow.log*
+work/
+results/
+
+# Nextflow reports
+timeline.html
+report.html
+trace.txt
+dag.dot
+dag.html
+dag.svg
+
+# Pipeline outputs
+*.html
+*.txt
+*.log
+
+# Claude Code
+.claude/

@@ -12,7 +12,6 @@ bwa mem reference.fasta reads_R1.fastq.gz reads_R2.fastq.gz > aligned.sam
 samtools view -bS aligned.sam > aligned.bam
 samtools sort aligned.bam -o aligned.sorted.bam
 samtools index aligned.sorted.bam
-qualimap bamqc -bam aligned.sorted.bam -outdir qualimap_results
 ```
 
 ## Key Changes from Lesson 4
@@ -82,16 +81,13 @@ Results are now organized by sample ID:
 results/
 ├── sample1/
 │   ├── alignment/
-│   ├── bam/
-│   └── qualimap/
+│   └── bam/
 ├── sample2/
 │   ├── alignment/
-│   ├── bam/
-│   └── qualimap/
+│   └── bam/
 └── sample3/
     ├── alignment/
-    ├── bam/
-    └── qualimap/
+    └── bam/
 ```
 
 ## Benefits

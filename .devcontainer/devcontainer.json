@@ -1,6 +1,6 @@
 {
     "name": "nextflow-curso-herramientas-computacionales-2025",
-    "image": "ghcr.io/mberacochea/nextflow-curso-herramientas-computacionales-2025:latest",
+    "image": "ghcr.io/nextflow-io/training:latest",
     "workspaceFolder": "/workspaces/nextflow-curso-herramientas-computacionales-2025",
     "remoteUser": "root",
     "remoteEnv": {
@@ -8,7 +8,7 @@
         "NXF_EDGE": "0",
         "NXF_VER": "25.04.7",
         "HOST_PROJECT_PATH": "/workspaces/nextflow-curso-herramientas-computacionales-2025",
-        "SHELL": "/bin/bash"
+        "SHELL": "/bin/bash" // Ush bash
     },
     "customizations": {
         "vscode": {

@@ -12,7 +12,6 @@ bwa mem reference.fasta reads_R1.fastq.gz reads_R2.fastq.gz > aligned.sam
 samtools view -bS aligned.sam > aligned.bam
 samtools sort aligned.bam -o aligned.sorted.bam
 samtools index aligned.sorted.bam
-qualimap bamqc -bam aligned.sorted.bam -outdir qualimap_results
 ```
 
 ## Nextflow Implementation
@@ -21,7 +20,7 @@ The pipeline is organized into individual modules, each representing a step from
 
 ## Exercise
 
-The workflow in `main.nf` is incomplete. Steps 4, 5, and 6 are missing. Your task is to complete the workflow by adding:
+The workflow in `main.nf` is incomplete. Steps 4 and 5 are missing. Your task is to complete the workflow by adding:
 
 1. **Step 4**: Sort BAM file using `SAMTOOLS_SORT`
    - Input: `SAMTOOLS_VIEW.out.bam`
@@ -31,19 +30,15 @@ The workflow in `main.nf` is incomplete. Steps 4, 5, and 6 are missing. Your tas
    - Input: `SAMTOOLS_SORT.out.sorted_bam`
    - Output: `indexed_bam`
 
-3. **Step 6**: Run quality control using `QUALIMAP_BAMQC`
-   - Input: `SAMTOOLS_INDEX.out.indexed_bam`
-
 All modules are already implemented in the `modules/` directory. You only need to add the process calls to the workflow and connect them using the output channels.
 
 ### Hints
 
 - Look at how Step 3 uses `SAMTOOLS_VIEW(BWA_MEM.out.sam)`
 - Each process output is accessed via `.out.<output_name>`
-- The modules for steps 4-6 are in:
+- The modules for steps 4-5 are in:
   - `modules/samtools/sort.nf`
   - `modules/samtools/index.nf`
-  - `modules/qualimap/bamqc.nf`
 
 ## Solution
 

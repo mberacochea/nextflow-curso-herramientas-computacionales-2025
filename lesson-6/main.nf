@@ -1,11 +1,4 @@
 /*
- * Pipeline parameters
- */
-params.samplesheet = null
-params.reference = null
-params.outdir = "results"
-
-/*
  * Import modules
  */
 include { BWA_INDEX      } from './modules/bwa/index'
@@ -13,7 +6,6 @@ include { BWA_MEM        } from './modules/bwa/mem'
 include { SAMTOOLS_VIEW  } from './modules/samtools/view'
 include { SAMTOOLS_SORT  } from './modules/samtools/sort'
 include { SAMTOOLS_INDEX } from './modules/samtools/index'
-include { QUALIMAP_BAMQC } from './modules/qualimap/bamqc'
 
 /*
  * Main workflow
@@ -43,10 +35,10 @@ workflow {
     // Step 1: Index reference genome
     BWA_INDEX(reference_ch)
 
-    // Step 2: Align reads to reference
+    // Step 2: Align reads to reference (process all samples)
     BWA_MEM(
         BWA_INDEX.out.index,
-        reads_ch.first()
+        reads_ch
     )
 
     // Step 3: Convert SAM to BAM
@@ -57,7 +49,4 @@ workflow {
 
     // Step 5: Index BAM file
     SAMTOOLS_INDEX(SAMTOOLS_SORT.out.sorted_bam)
-
-    // Step 6: Run quality control
-    QUALIMAP_BAMQC(SAMTOOLS_INDEX.out.indexed_bam)
 }
