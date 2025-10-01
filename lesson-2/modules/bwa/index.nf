@@ -1,7 +1,9 @@
 process BWA_INDEX {
     tag "${reference.simpleName}"
+    cpus 2
+    memory '1.GB'
     conda "bioconda::bwa=0.7.17"
-    container "biocontainers/bwa:0.7.17--hed695b0_7"
+    container "quay.io/biocontainers/bwa:0.7.17--hed695b0_7"
 
     input:
     path reference

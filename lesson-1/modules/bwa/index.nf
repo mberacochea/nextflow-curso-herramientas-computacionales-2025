@@ -1,7 +1,7 @@
 process BWA_INDEX {
     tag "${reference.simpleName}"
-    cpus 4
-    memory '8.GB'
+    cpus 2
+    memory '1.GB'
 
     input:
     path reference

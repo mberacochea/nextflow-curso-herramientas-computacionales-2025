@@ -1,4 +1,6 @@
 process SAMTOOLS_SORT {
+    cpus 2
+    memory '1.GB'
 
     input:
     path bam

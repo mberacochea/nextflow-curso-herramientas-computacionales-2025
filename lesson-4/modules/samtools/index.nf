@@ -1,6 +1,8 @@
 process SAMTOOLS_INDEX {
+    cpus 1
+    memory '512.MB'
     conda "bioconda::samtools=1.17"
-    container "biocontainers/samtools:1.17--hd87286a_2"
+    container "quay.io/biocontainers/samtools:1.17--hd87286a_2"
     publishDir "${params.outdir}/bam", mode: 'copy', pattern: "*.bai"
 
     input:

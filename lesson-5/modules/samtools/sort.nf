@@ -1,7 +1,9 @@
 process SAMTOOLS_SORT {
     tag "${meta.id}"
+    cpus 2
+    memory '1.GB'
     conda "bioconda::samtools=1.17"
-    container "biocontainers/samtools:1.17--hd87286a_2"
+    container "quay.io/biocontainers/samtools:1.17--hd87286a_2"
     publishDir "${params.outdir}/${meta.id}/bam", mode: 'copy', pattern: "*.sorted.bam"
 
     input:

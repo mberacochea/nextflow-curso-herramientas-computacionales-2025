@@ -23,7 +23,7 @@ Each module now includes both `conda` and `container` directives for software ma
 ```groovy
 process BWA_INDEX {
     conda "bioconda::bwa=0.7.17"
-    container "biocontainers/bwa:0.7.17--hed695b0_7"
+    container "quay.io/biocontainers/bwa:0.7.17--hed695b0_7"
     ...
 }
 ```

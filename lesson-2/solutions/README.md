@@ -10,7 +10,7 @@ Add after the process declaration:
 
 ```groovy
 conda "bioconda::bwa=0.7.17"
-container "biocontainers/bwa:0.7.17--hed695b0_7"
+container "quay.io/biocontainers/bwa:0.7.17--hed695b0_7"
 ```
 
 ### Samtools Modules (view.nf, sort.nf, index.nf)
@@ -19,7 +19,7 @@ Add after the process declaration:
 
 ```groovy
 conda "bioconda::samtools=1.17"
-container "biocontainers/samtools:1.17--hd87286a_2"
+container "quay.io/biocontainers/samtools:1.17--hd87286a_2"
 ```
 
 ### Result

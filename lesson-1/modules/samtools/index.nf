@@ -1,6 +1,6 @@
 process SAMTOOLS_INDEX {
-    cpus 2
-    memory '4.GB'
+    cpus 1
+    memory '512.MB'
 
     input:
     path sorted_bam

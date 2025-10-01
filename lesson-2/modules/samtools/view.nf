@@ -1,4 +1,6 @@
 process SAMTOOLS_VIEW {
+    cpus 1
+    memory '512.MB'
 
     input:
     path sam

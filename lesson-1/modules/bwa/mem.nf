@@ -1,6 +1,6 @@
 process BWA_MEM {
-    cpus 8
-    memory '16.GB'
+    cpus 2
+    memory '1.GB'
 
     input:
     tuple path(reference), path(index)
