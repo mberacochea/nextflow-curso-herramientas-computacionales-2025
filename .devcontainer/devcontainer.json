@@ -8,7 +8,7 @@
         "NXF_EDGE": "0",
         "NXF_VER": "25.04.7",
         "HOST_PROJECT_PATH": "/workspaces/nextflow-curso-herramientas-computacionales-2025",
-        "SHELL": "/bin/bash" // Ush bash
+        "SHELL": "/bin/bash"
     },
     "customizations": {
         "vscode": {
