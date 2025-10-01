@@ -33,7 +33,7 @@ workflow {
         }
 
     // Step 1: Index reference genome
-    BWA_INDEX(reference_ch)
+    BWA_INDEX(reference_ch.first())
 
     // Step 2: Align reads to reference (process all samples)
     BWA_MEM(

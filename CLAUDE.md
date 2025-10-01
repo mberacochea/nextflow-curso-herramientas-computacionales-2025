@@ -47,12 +47,10 @@ timeline {
 profiles {
     docker {
         docker.enabled = true
-        docker.runOptions = '-u $(id -u):$(id -g)'
     }
 
     conda {
         conda.enabled = true
-        conda.useMicromamba = true
     }
 }
 ```
