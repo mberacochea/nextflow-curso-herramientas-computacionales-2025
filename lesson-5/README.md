@@ -2,7 +2,7 @@
 
 ## Objective
 
-Adapt the pipeline to process multiple samples by reading input from a CSV samplesheet. This lesson introduces the meta map concept, which is essential for tracking sample information throughout the pipeline.
+This lesson demonstrates how to process multiple samples using a CSV samplesheet. It introduces the meta map pattern for tracking sample information throughout the pipeline.
 
 ## Workflow in Bash
 

@@ -14,26 +14,25 @@ The course is organized into progressive lessons, each building upon the previou
 
 ### Lesson 1: Basic Nextflow Pipeline
 
-Convert a bash workflow into a Nextflow pipeline, we will start with separating each individual step of the bash script into its own module. We then stitch them together into a workflow, plus a configuration file to the basics.
-Learn the fundamentals of processes, channels, and workflow structure while defining resource requirements directly in modules.
+Convert a bash workflow into a Nextflow pipeline. Separate each step of the bash script into its own module, then connect them in a workflow with a configuration file.
 
-Key concepts: Processes, channels, modules, resource directives.
+Key concepts: Processes, channels, modules, resource directives
 
 ### Lesson 2: Software Environment Management
 
-Add reproducible software environments using Docker containers and Conda. Learn to use profiles for switching between execution modes.
+Add reproducible software environments using Docker containers and Conda. Use profiles to switch between execution modes.
 
 Key concepts: Docker, Conda, profiles, reproducibility
 
 ### Lesson 3: Publishing Results
 
-Organize pipeline outputs using `publishDir` directives to create a structured results directory with the pipeline final set of files.
+Organize pipeline outputs using publishDir directives to create a structured results directory.
 
 Key concepts: Publishing results, output organization, pattern matching
 
 ### Lesson 4: Centralized Configuration
 
-Move resource requirements (cpus, memory, time) from individual modules to a centralized `nextflow.config` file. This lesson includes an exercise to practice centralizing process resources.
+Move resource requirements (cpus, memory, time) from individual modules to a centralized nextflow.config file.
 
 Key concepts: Configuration files, process scopes, centralized resource management
 
@@ -58,84 +57,6 @@ samtools sort aligned.bam -o aligned.sorted.bam
 
 samtools index aligned.sorted.bam
 ```
-
-## Getting Started
-
-### Using GitHub Codespaces
-
-Click the "Code" button above and select "Create codespace on main". The environment will be automatically configured with all necessary tools.
-
-### Using VS Code Dev Containers Locally
-
-1. Install [Docker Desktop](https://www.docker.com/products/docker-desktop/)
-2. Install [VS Code](https://code.visualstudio.com/) with the [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
-3. Clone this repository
-4. Open in VS Code and select "Reopen in Container"
-
-See `.devcontainer/README.md` for detailed testing instructions.
-
-## Running the Lessons
-
-Each lesson directory contains:
-- `README.md` - Learning objectives and key changes
-- `main.nf` - Main workflow file
-- `nextflow.config` - Configuration file
-- `modules/` - Process definitions organized by tool
-
-For lesson 1:
-
-```bash
-cd lesson-1
-nextflow run main.nf \
-  --reference /workspaces/nextflow-curso-herramientas-computacionales-2025/assets/genome.fasta \
-  --reads '/workspaces/nextflow-curso-herramientas-computacionales-2025/assets/test_{1,2}.fastq.gz' \
-  --outdir results
-```
-
-For lessons 2-4, specify an execution profile:
-
-```bash
-nextflow run main.nf \
-  -profile docker \
-  --reference /workspaces/nextflow-curso-herramientas-computacionales-2025/assets/genome.fasta \
-  --reads '/workspaces/nextflow-curso-herramientas-computacionales-2025/assets/test_{1,2}.fastq.gz' \
-  --outdir results
-```
-
-For lesson 5 (multiple samples):
-
-```bash
-cd lesson-5
-nextflow run main.nf \
-  -profile docker \
-  --reference /workspaces/nextflow-curso-herramientas-computacionales-2025/assets/genome.fasta \
-  --samplesheet samplesheet.csv \
-  --outdir results
-```
-
-## Tools and Technologies
-
-- Nextflow
-- Docker
-- Conda/Micromamba
-- BWA (alignment)
-- Samtools (BAM processing)
-
-## Prerequisites
-
-Basic understanding of:
-- Command line / bash scripting
-- Bioinformatics workflows
-- Docker concepts (helpful but not required)
-
-## Course Format
-
-The course has 5 progressive lessons:
-- Clear learning objectives
-- Comparison with previous lesson
-- Working code examples
-- README with explanations
-- Lessons 1, 2, 3, and 4 include hands-on exercises with solutions
 
 Progress through the lessons sequentially to build a complete understanding of Nextflow pipeline development.
 

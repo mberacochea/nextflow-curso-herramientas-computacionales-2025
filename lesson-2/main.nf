@@ -1,11 +1,4 @@
 /*
- * Pipeline parameters
- */
-params.reference = null
-params.reads = null
-params.outdir = "results"
-
-/*
  * Import modules
  */
 include { BWA_INDEX      } from './modules/bwa/index'
