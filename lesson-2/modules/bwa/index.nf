@@ -13,6 +13,6 @@ process BWA_INDEX {
 
     script:
     """
-    bwa index -t ${task.cpus} ${reference}
+    bwa index ${reference}
     """
 }
