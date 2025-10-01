@@ -37,7 +37,7 @@ Move resource requirements (cpus, memory, time) from individual modules to a cen
 
 Key concepts: Configuration files, process scopes, centralized resource management
 
-### Lesson 6: Processing Multiple Samples
+### Lesson 5: Processing Multiple Samples
 
 Adapt the pipeline to process multiple samples using a CSV samplesheet input. Introduces the meta map pattern for tracking sample information and organizing outputs by sample ID.
 
@@ -102,10 +102,10 @@ nextflow run main.nf \
   --outdir results
 ```
 
-For lesson 6 (multiple samples):
+For lesson 5 (multiple samples):
 
 ```bash
-cd lesson-6
+cd lesson-5
 nextflow run main.nf \
   -profile docker \
   --reference /workspaces/nextflow-curso-herramientas-computacionales-2025/assets/genome.fasta \
@@ -130,12 +130,12 @@ Basic understanding of:
 
 ## Course Format
 
-The course has 5 progressive lessons (numbered 1, 2, 3, 4, 6):
+The course has 5 progressive lessons:
 - Clear learning objectives
 - Comparison with previous lesson
 - Working code examples
 - README with explanations
-- Lessons 1 and 4 include hands-on exercises with solutions
+- Lessons 1, 2, 3, and 4 include hands-on exercises with solutions
 
 Progress through the lessons sequentially to build a complete understanding of Nextflow pipeline development.
 

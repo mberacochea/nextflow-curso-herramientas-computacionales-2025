@@ -1,4 +1,4 @@
-# Lesson 6: Processing Multiple Samples with CSV Input
+# Lesson 5: Processing Multiple Samples with CSV Input
 
 ## Objective
 

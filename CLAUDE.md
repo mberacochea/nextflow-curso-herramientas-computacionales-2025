@@ -11,7 +11,7 @@ This is a Nextflow training course that teaches how to convert bash bioinformati
 - Use DSL2 syntax exclusively
 - Organize processes into individual module files under `modules/`
 - Use simple, hardcoded filenames for single-sample workflows (e.g., `aligned.sam`, `aligned.bam`)
-- Only use meta maps in lesson-6 for multiple sample processing
+- Only use meta maps in lesson-5 for multiple sample processing
 - Always include `${task.cpus}` in tool commands for thread/CPU parameters
 - Follow nf-core coding practices
 
@@ -21,11 +21,11 @@ This is a Nextflow training course that teaches how to convert bash bioinformati
 ```groovy
 params {
     reference = null
-    reads = null  // or samplesheet for lesson-6
+    reads = null  // or samplesheet for lesson-5
     outdir = "results"
 }
 
-// Process resources (lessons 4 and 6 only)
+// Process resources (lessons 4 and 5 only)
 process {
     cpus = 2
     memory = '4.GB'
@@ -37,13 +37,13 @@ process {
     }
 }
 
-// Execution reports (lessons 3-6)
+// Execution reports (lessons 3-5)
 timeline {
     enabled = true
     file = "${params.outdir}/timeline.html"
 }
 
-// Profiles (lessons 2-6)
+// Profiles (lessons 2-5)
 profiles {
     docker {
         docker.enabled = true
@@ -123,6 +123,6 @@ process BWA_MEM {
 
 - No qualimap in this course (removed for container size)
 - Workflow ends at samtools index (5 steps total)
-- Only lesson-6 processes multiple samples
+- Only lesson-5 processes multiple samples
 - Keep configurations consistent across all lessons
 - Use profiles for execution, never hardcode docker.enabled outside profiles
