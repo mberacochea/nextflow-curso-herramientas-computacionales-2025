@@ -49,6 +49,5 @@ A complete working solution is available in the `solutions/` directory.
 ```bash
 nextflow run main.nf \
   --reference /workspaces/nextflow-curso-herramientas-computacionales-2025/assets/genome.fasta \
-  --reads '/workspaces/nextflow-curso-herramientas-computacionales-2025/assets/test_{1,2}.fastq.gz' \
-  --outdir results
+  --reads '/workspaces/nextflow-curso-herramientas-computacionales-2025/assets/test_{1,2}.fastq.gz'
 ```
