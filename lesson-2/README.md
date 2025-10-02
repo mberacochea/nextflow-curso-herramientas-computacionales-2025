@@ -8,9 +8,13 @@ Add software environment management using Docker containers and Conda to ensure 
 
 ```bash
 bwa index reference.fasta
+
 bwa mem reference.fasta reads_R1.fastq.gz reads_R2.fastq.gz > aligned.sam
+
 samtools view -bS aligned.sam > aligned.bam
+
 samtools sort aligned.bam -o aligned.sorted.bam
+
 samtools index aligned.sorted.bam
 ```
 
@@ -51,6 +55,8 @@ profiles {
 - Easy switching between Docker and Conda
 
 ## Running the Pipeline
+
+:warning: Execute the pipeline and debug the issue.
 
 With Docker:
 ```bash

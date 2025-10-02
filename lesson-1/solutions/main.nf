@@ -20,9 +20,7 @@ workflow {
     }
 
     // Create input channels
-    // TODO: link to docs
     reference_ch = Channel.fromPath(params.reference)
-    // TODO: link to docs
     reads_ch = Channel.fromFilePairs(params.reads, checkIfExists: true)
 
     // Step 1: Index reference genome
