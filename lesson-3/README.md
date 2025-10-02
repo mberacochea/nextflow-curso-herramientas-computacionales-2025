@@ -8,9 +8,13 @@ Add `publishDir` directives to modules to organize and save final outputs in a s
 
 ```bash
 bwa index reference.fasta
+
 bwa mem reference.fasta reads_R1.fastq.gz reads_R2.fastq.gz > aligned.sam
+
 samtools view -bS aligned.sam > aligned.bam
+
 samtools sort aligned.bam -o aligned.sorted.bam
+
 samtools index aligned.sorted.bam
 ```
 
@@ -47,6 +51,8 @@ The `pattern` parameter in `publishDir` allows selective publishing of specific 
 - Reproducible directory structure across runs
 
 ## Running the Pipeline
+
+:warning: Execute the pipeline and debug the issue.
 
 With Docker:
 ```bash

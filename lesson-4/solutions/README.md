@@ -18,22 +18,22 @@ process {
 
     // Process-specific resource allocations
     withName: 'BWA_INDEX' {
-        cpus = 4
-        memory = '8.GB'
+        cpus = 2
+        memory = '1.GB'
     }
 
     withName: 'BWA_MEM' {
-        cpus = 8
-        memory = '16.GB'
+        cpus = 2
+        memory = '1.GB'
     }
 
     withName: 'SAMTOOLS_SORT' {
-        cpus = 4
-        memory = '8.GB'
+        cpus = 1
+        memory = '512.MB'
     }
 }
 ```
 
 ### Result
 
-Resources are now centrally managed in the config file instead of being hardcoded in each process module. The modules use `${task.cpus}` to reference the configured values.
+Resources are now centrally managed in the config file instead of being on each process module. The modules use `${task.cpus}` to reference the configured values.
